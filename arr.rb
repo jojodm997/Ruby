@@ -1,5 +1,6 @@
 num_array = [1, 2, 3, 4, 5]
 str_array = ["This", "is", "a", "small", "array"]
+str_array.size #=> 5
 
 Array.new #=> []
 Array.new(3) #=> [nil, nil, nil]
@@ -146,3 +147,38 @@ end
 
 p arr
 p new_arr
+
+letters = %w(a b c d) # Avoid quotation mark ""
+letters.join # "abcd"
+letters.join (" ")
+
+users = [
+  [1, "Fauzan"],
+  [2, "Dwi"]
+] # 2d array 
+
+users[0][0] # 1 
+users[0][1] # "Fauzan"
+users.flatten # [1, "Fauzan", 2, "Dwi"]
+
+userd = userd.map { |user| user.capitalize }
+userd = userd.ap(&:capitalize)
+
+numbers = [3, 7, 12, 2, 49]
+numbers.slect { |n| n > 10 } #=> 12, 49
+
+[1, 3, 3, 5, 5].uniq #=> [1, 3, 5]
+
+numbers.sample #=> random element
+numbers.take(3) #=> [3, 7, 12]
+numbers[0,3] #=> [3, 7, 12] 
+numbers[1..-1] #=> [3, 7, 12, 2, 49]
+
+numbers << nil
+# [1, 3, 3, 5, 5, nil]
+numbers.compact
+# [1, 3, 3, 5, 5]
+
+users.concat(new_users) # merge two array 
+users = users - users_to_delete # remove elements
+users & new_users # get the elements that appear in two arrays in the same time
