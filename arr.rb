@@ -101,7 +101,7 @@ yoink.unshift(1) #=> [1, 2, 3, 4]
 #=> This is index 1 
 #=> THis is index 2 
 
-[1, 2, 3].each_with_index { |val, idx| puts "#{idx+1}. #{val}" }
+[1, 2, 3].each_with_index { |val, idx| puts "#{idx + 1}. #{val}" }
 #=> 1. 1
 #=> 2. 2
 #=> 3. 3
@@ -109,4 +109,40 @@ yoink.unshift(1) #=> [1, 2, 3, 4]
 [5, 3, 8, 2, 4, 1].sort #=> [1, 2, 3, 4, 5, 8]
 [1, 2, 3].product([4, 5]) #=> [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]]
 
+[1, 2, 3].each { |e| puts e + 2 }
+#=> 3
+#=> 4 
+#=> 5
+#=> [1, 2, 3]
 
+# if no block, Enumerator is return
+
+[1, 2, 3].map { |a| puts x**2 }
+#=> 1 
+#=> 4 
+#=> 9
+#=> [nil, nil, nil]
+
+arr = [["test", "hello", "world"],["example", "mem"]]
+arr[1][0] #=> "example"
+
+arryp = [15, 7, 18, 5, 12, 8, 5, 1]
+arryp.index(5) #=> 3: 5 (This is the first occurrence of 5.)
+
+string = "Welcome to America!"
+a = string[6] #=> "e"
+b = string[11] #=> "A"
+
+names = ['bob', 'joe', 'susan', 'margaret']
+names[3] = 'jody'   # => ["bob", "joe", "susan", "jody"]
+
+# cool 
+arr = [1, 2, 3, 4, 5]
+new_arr = []
+
+arr.each do |n|
+  new_arr << n + 2
+end
+
+p arr
+p new_arr
