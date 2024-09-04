@@ -8,11 +8,11 @@ my_hash = {
 my_hash = Hash.new
 my_hash #=> {}
 
-hash = { 9 => "nine", :six => 6}
+hash = { 9 => "nine", :six => 6, 4.4234 => "forty four point something"}
 
 shoes = { 
   "summer" => "sandals",
-  "winter" = "boots"
+  "winter" => "boots"
 }
 
 shoes["summer"] #=> "sandals"
@@ -45,7 +45,7 @@ american_cars = {
 }
 
 # Symbols syntax 
-japanese_cars { 
+japanese_cars = { 
   honda: "Accord",
   toyota: "Corrola",
   nissan: "Altima"
@@ -53,3 +53,23 @@ japanese_cars {
 
 american_cars[:ford] #=> Mustang 
 japanese_cars[:honda] #=> Accord 
+
+person = {name: "bob", height: "6 ft", weight: "160 lbs", hair: "brown"}
+person.each do |key, value|
+  puts "Bob's #{key}, #{value}"
+end
+
+ # optional parameters
+def greeting(name, option = {})
+  if options.empty?
+    puts "Hi, my name is #{name}"
+  else 
+    puts "Hi, my name is #{name} and I'm #{options[:age]}" + 
+         "years old and i live in #{options[:city]}."
+  end
+end
+
+greeting("Bob")
+greeting("Bob", {age: 62, city: "New York City"}) 
+
+
