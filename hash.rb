@@ -59,6 +59,22 @@ person.each do |key, value|
   puts "Bob's #{key}, #{value}"
 end
 
+person.key?(:name) #=> true
+person.key?(:wealth) #=> false
+
+name_and_age = { "Bob" => 42, "Steve" => 31, "Joe" => 19}
+
+name_and_age.select { |k,v| (k == "Bob") || (v == 19) } #=> {"Bob"=>42, "Joe"=>19}
+
+name_and_age.fetch("Steve") #=> 31
+
+name_and_age.fetch("Larry", "Larry isn't in this hash") #=> LARRY ins't in this hash
+
+name_and_age.to_a #=> [["Bob" 42], ["Steve", 31], ["Joe", 19]]
+
+name_and_age.keys #=> ["Bob", "Steve", "Joe"]
+name_and_age.values #=> [42, 31, 19]
+
  # optional parameters
 def greeting(name, option = {})
   if options.empty?
@@ -73,3 +89,8 @@ greeting("Bob")
 greeting("Bob", {age: 62, city: "New York City"}) 
 
 
+opposites = {positive: "negative", up: "down", right: "left"}
+
+opposites.each_key { |key| puts key }
+opposites.each_value { |value| puts value }
+opposites.each { |key, value| puts "The opposite of #{key} is #{value}" }
