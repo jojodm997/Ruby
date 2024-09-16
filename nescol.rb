@@ -66,5 +66,169 @@ teacher_mailboxes.each_with_index do |row, row_index|
     puts "Row:#{row_index} Column:#{column_index} = #{teacher}"
   end 
 end
+#=> Row:0 Column:0 = Adams
+#=> Row:0 Column:1 = Baker
+#=> Row:0 Column:2 = Clark
+#=> Row:0 Column:3 = Davis
+#=> Row:1 Column:0 = Jones
+#=> Row:1 Column:1 = Lewis
+#=> Row:1 Column:2 = Lopez
+#=> Row:1 Column:3 = Moore
+#=> Row:2 Column:0 = Perez
+#=> Row:2 Column:1 = Scott
+#=> Row:2 Column:2 = Smith
+#=> Row:2 Column:3 = Young
+#=> [["Adams", "Baker", "Clark", "Davis"], ["Jones", "Lewis", "Lopez", "Moore"], ["Perez", "Scott", "Smith", "Young"]]
+
+teacher_mailboxes.flatten.each do |teacher|
+  puts "#{teacher} is amazing!"
+end
+#=> Adams is amazing!
+#=> Baker is amazing!
+#=> Clark is amazing!
+#=> Davis is amazing!
+#=> Jones is amazing!
+#=> Lewis is amazing!
+#=> Lopez is amazing!
+#=> Moore is amazing!
+#=> Perez is amazing!
+#=> Scott is amazing!
+#=> Smith is amazing!
+#=> Young is amazing!
+#=> ["Adams", "Baker", "Clark", "Davis", "Jones", "Lewis", "Lopez", "Moore", "Perez", "Scott", "Smith", "Young"]
+
+test_scores = [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
+#=> [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
+
+test_scores.any? do |scores|
+  scores.all? { |score| score > 80 }
+end
+#=> false because none of the nested arrays have scores that are all over 80. 
+
+test_scores.all? do |scores|
+  scores.any? { |score| score > 80 }
+end
+#=> true because now it is determining if all of the nested arrays contain any number over 80. This returns true, because each of the nested arrays have at least one number over 80.
+
+vehicles = {
+  alice: {year: 2019, make: "Toyota", model: "Corolla"},
+  blake: {year: 2020, make: "Volkswagen", model: "Beetle"},
+  caleb: {year: 2020, make: "Honda", model: "Accord"}
+}
+
+vehicles[:alice][:year]
+#=> 2019
+vehicles[:blake][:make]
+#=> "Volkswagen"
+vehicles[:caleb][:model]
+#=> "Accord"
+
+vehicles[:zoe][:year]
+#=> NoMethodError
+vehicles.dig(:zoe, :year)
+#=> nil
+vehicles[:alice][:color]
+#=> nil
+vehicles.dig(:alice, :color)
+#=> nil
 
 
+vehicles[:dave] = {year: 2021, make: "Ford", model: "Escape"}
+#=> {:year=>2021, :make=>"Ford", :model=>"Escape"}
+vehicles
+#=> {:alice=>{:year=>2019, :make=>"Toyota", :model=>"Corolla"}, :blake=>{:year=>2020, :make=>"Volkswagen", :model=>"Beetle"}, :caleb=>{:year=>2020, :make=>"Honda", :model=>"Accord"}, :dave=>{:year=>2021, :make=>"Ford", :model=>"Escape"}}
+
+vehicles[:dave][:color] = "red"
+#=> "red"
+vehicles
+#=> {:alice=>{:year=>2019, :make=>"Toyota", :model=>"Corolla"}, :blake=>{:year=>2020, :make=>"Volkswagen", :model=>"Beetle"}, :caleb=>{:year=>2020, :make=>"Honda", :model=>"Accord"}, :dave=>{:year=>2021, :make=>"Ford", :model=>"Escape", :color=>"red"}}
+
+
+vehicles.delete(:blake)
+#=> {:year=>2020, :make=>"Volkswagen", :model=>"Beetle"}
+vehicles
+#=> {:alice=>{:year=>2019, :make=>"Toyota", :model=>"Corolla"}, :caleb=>{:year=>2020, :make=>"Honda", :model=>"Accord"}, :dave=>{:year=>2021, :make=>"Ford", :model=>"Escape", :color=>"red"}}
+
+
+vehicles[:dave].delete(:color)
+#=> "red"
+vehicles
+#=> {:alice=>{:year=>2019, :make=>"Toyota", :model=>"Corolla"}, :caleb=>{:year=>2020, :make=>"Honda", :model=>"Accord"}, :dave=>{:year=>2021, :make=>"Ford", :model=>"Escape"}}
+
+vehicles.select { |name, data| data[:year] >= 2020 }
+#=> {:caleb=>{:year=>2020, :make=>"Honda", :model=>"Accord"}, :dave=>{:year=>2021, :make=>"Ford", :model=>"Escape"}}
+
+vehicles.collect { |name, data| name if data[:year] >= 2020 }
+#=> [nil, :caleb, :dave]
+
+vehicles.collect { |name, data| name if data[:year] >= 2020 }.compact
+#=> [:caleb, :dave]
+
+vehicles.filter_map { |name, data| name if data[:year] >= 2020}
+#=> [:caleb, :dave]
+
+contacts = {
+  "Jon Snow" => {
+    name: "Jon",
+    email: "jon_snow@thewall.we",
+    favorite_ice_cream_flavors: ["chocolate", "vanilla", "mint chip"],
+    knows: nil 
+  },
+  "Freddy Mercury" => {
+    name: "Freddy",
+    email: "freddy@mercury.com",
+    favorite_ice_cream_flavors: ["strawberry", "cookie dough", "mint chip"]
+  }
+}
+
+contacts.each do |person, data|
+  puts "#{person}: #{data}"
+end 
+=begin 
+Jon Snow:
+{ :name=>"Jon",
+  :email=>"jon_snow@thewall.we",
+  :favorite_ice_cream_flavors=>["chocolate", "vanilla", "mint chip"],
+  :knows=>nil
+}
+
+Freddy Mercury:
+{ :name=>"Freddy",
+:email=>"freddy@mercury.com",
+:favorite_ice_cream_flavors=>["strawberry", "cookie dough", "mint chip"]
+}
+=end
+
+contact.each do |person, data| 
+  data.each do |attribute, value|
+    puts "#{attribute}: #{value}"
+  end 
+end
+=begin
+    name: Jon
+email: jon_snow@thewall.we
+favorite_ice_cream_flavors: ["chocolate", "vanilla", "mint chip"]
+knows: nil
+
+name: Freddy
+email: freddy@mercury.com
+favorite_ice_cream_flavors: ["strawberry", "cookie dough", "mint chip"]
+=end
+
+contacts.each do |person, data|
+  data.each do |attribute, value|
+    if attribute == :favorite_ice_cream_flavors
+      value.each do |flavor| 
+        puts "#{flavor}"
+      end 
+    end 
+  end 
+end 
+=begin 
+chocolate
+vanilla
+mint chip
+strawberry
+cookie dough
+mint chip
+=end 
