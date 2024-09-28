@@ -13,4 +13,4 @@ def substrings(str, dict)
   return substrings
 end
 result = substrings("Howdy partner, sit down! How's it going?", dictionary) 
-puts result.inspect
+puts result.inspect #inspect
