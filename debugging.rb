@@ -64,3 +64,29 @@ while values.length > 0
   end
 end
 
+while true # Always true ! 
+  puts "Enter a number>>"
+  begin 
+    num = Kernel.gets.match(/\d+/)[0]
+  rescue 
+    puts "Error input! Try again.."
+  else
+    puts "#{num} + 1 is: #{num.to_i + 1}"
+  end
+end
+
+for i in "A".."C"
+  retries = 2 
+  begin 
+    puts "Executing command #{i}"
+    raise "Exception: #{i}"
+  rescue Exception=>e 
+    puts "\tCaught: #{e}"
+    if retries > 0 
+      puts "\t Trying #{retries} more times\n"
+      retries -= 1 
+      sleep 2 
+      retry 
+    end 
+  end 
+end
