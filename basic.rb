@@ -91,3 +91,5 @@ nil                      # nil literal
 
 -300.abs #=> 300 
 300.abs #=> 300
+
+"sUp DuDe".swapcase() #=> SuP dUdE

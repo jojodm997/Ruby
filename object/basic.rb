@@ -30,6 +30,21 @@ bob = HumanBeing.new
 bob.speak("Hello!") #=> Hello!
 
 
+class Calculator
+  def self.add(num1, num2) 
+    return num1 + num2
+  end
+end
 
+class Celsius 
+  def initialize(temperature)
+    @temperature = temperature
+  end
 
+  def to_fahrenhit()
+    return(@temperature * 1.8 + 32)
+  end
+end
 
+celsius = Celsius.new(10)
+puts celsius.to_fahrenhit()
