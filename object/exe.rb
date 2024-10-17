@@ -156,3 +156,52 @@ end
 c = Calculator.new 
 c.square_root(4)
 
+
+
+class Viking 
+  attr_accessor :name, :age, :health, :strength
+
+  @@starting_health
+  def initialize(name, age, health, strength)
+    @name = name 
+    @age = age 
+    @health = health
+    @strength = strength
+  end
+
+  def self.create_warrior(name)
+    age = rand * 20 + 15 
+    health = [age * 5, 120].min
+    strength = [age / 2, 10].min
+    Viking.new(name, health, age, strength)
+  end
+
+  def attack(enemy)
+    
+  end
+
+  def take_damage(damage)
+    self.health -= damage 
+    self.shout("OUCH!")
+  end
+
+  def shout(str)
+    puts str
+  end
+
+  def sleep 
+    self.health += 1 unless health >= 99
+  end
+
+  def self.random_name
+    ["Loki", "Muginn", "Huginn"].sample
+  end
+
+  def self.silver_to_gold(silver_pieces)
+    silver_pieces / 10 
+  end
+
+  def gold_to_silver(gold_pieces)
+    gold_pieces * 10
+  end
+end
