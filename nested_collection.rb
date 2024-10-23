@@ -184,36 +184,35 @@ contacts = {
 contacts.each do |person, data|
   puts "#{person}: #{data}"
 end 
-=begin 
-Jon Snow:
-{ :name=>"Jon",
-  :email=>"jon_snow@thewall.we",
-  :favorite_ice_cream_flavors=>["chocolate", "vanilla", "mint chip"],
-  :knows=>nil
-}
+
+# Jon Snow:
+# { :name=>"Jon",
+#  :email=>"jon_snow@thewall.we",
+#  :favorite_ice_cream_flavors=>["chocolate", "vanilla", "mint chip"],
+#  :knows=>nil
+#}
 
 Freddy Mercury:
 { :name=>"Freddy",
 :email=>"freddy@mercury.com",
 :favorite_ice_cream_flavors=>["strawberry", "cookie dough", "mint chip"]
 }
-=end
 
 contact.each do |person, data| 
   data.each do |attribute, value|
     puts "#{attribute}: #{value}"
   end 
 end
-=begin
-    name: Jon
-email: jon_snow@thewall.we
-favorite_ice_cream_flavors: ["chocolate", "vanilla", "mint chip"]
-knows: nil
 
-name: Freddy
-email: freddy@mercury.com
-favorite_ice_cream_flavors: ["strawberry", "cookie dough", "mint chip"]
-=end
+#    name: Jon
+# email: jon_snow@thewall.we
+# favorite_ice_cream_flavors: ["chocolate", "vanilla", "mint chip"]
+# knows: nil
+
+# name: Freddy
+# email: freddy@mercury.com
+# favorite_ice_cream_flavors: ["strawberry", "cookie dough", "mint chip"]
+
 
 contacts.each do |person, data|
   data.each do |attribute, value|
@@ -224,14 +223,13 @@ contacts.each do |person, data|
     end 
   end 
 end 
-=begin 
-chocolate
-vanilla
-mint chip
-strawberry
-cookie dough
-mint chip
-=end 
+
+# chocolate
+# vanilla
+# mint chip
+# strawberry
+# cookie dough
+# mint chip
 
 
 data = [
@@ -255,31 +253,29 @@ data.each do |company|
   company["properties"].delete("primary_role")
 end 
 
-=begin
-[{"id"=>"1", "properties"=>{"name"=>"Google", "stock_symbol"=>"GOOG"}},
-{"id"=>"2", "properties"=>{"name"=>"Facebook", "stock_symbol"=>"FB"}}]
-=end
+# [{"id"=>"1", "properties"=>{"name"=>"Google", "stock_symbol"=>"GOOG"}},
+# {"id"=>"2", "properties"=>{"name"=>"Facebook", "stock_symbol"=>"FB"}}]
+
 
 data.each do |company| 
   company["properties"]["industry"] = "Advertising/Privacy Invasion"
 end 
-=begin 
-[
-  {
-    "id"=>"1", 
-    "properties"=>{
-      "name"=>"Google", 
-      "stock_symbol"=>"GOOG", 
-      "industry"=>"Advertising/Privacy Invasion"
-    }
-  },
-  {
-    "id"=>"2", 
-    "properties"=>{
-      "name"=>"Facebook", 
-      "stock_symbol"=>"FB", 
-      "industry"=>"Advertising/Privacy Invasion"
-    }
-  }
-]
-=end
+
+#[
+#  {
+#    "id"=>"1", 
+#    "properties"=>{
+#      "name"=>"Google", 
+#      "stock_symbol"=>"GOOG", 
+#      "industry"=>"Advertising/Privacy Invasion"
+#    }
+#  },
+#  {
+#    "id"=>"2", 
+#    "properties"=>{
+#      "name"=>"Facebook", 
+#      "stock_symbol"=>"FB", 
+#      "industry"=>"Advertising/Privacy Invasion"
+#    }
+#  }
+#]

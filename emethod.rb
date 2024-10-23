@@ -129,10 +129,3 @@ fruits.none? { |fruit| fruit.length > 6 } #=> false
 [1, 2].one? #=> false 
 
 [1, 2, 3].all?(1..10) #=> true
-
-
-
-
-
-
-

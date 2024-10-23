@@ -143,5 +143,3 @@ elsif number <= 100
 else 
   puts "#{number} is above 100"
 end
-
-
