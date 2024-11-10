@@ -101,7 +101,7 @@ else
 end
 
 ages = 19 
-response = ages < 18 ? "You still have ypur entire life ahead of you" : "You're all grown up."
+response = ages < 18 ? "You still have your entire life ahead of you" : "You're all grown up."
 puts response #=> "You're all grown up"
 
 puts "Put in a number"
