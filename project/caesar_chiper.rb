@@ -4,7 +4,7 @@ def chiper(str, num)
   encrypted = ""
 
   str.chars do |char| 
-    if upcase.include?(upcase)
+    if upcase.include?(char)
       new_index = (upcase.index(char) + num ) % 26
       encrypted += upcase[new_index]
     elsif lowcase.include?(char)
@@ -18,3 +18,5 @@ def chiper(str, num)
 end
 
 puts chiper("What a string", 5)
+
+(/[^a-zA-Z0-9]/)
