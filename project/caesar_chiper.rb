@@ -18,5 +18,3 @@ def chiper(str, num)
 end
 
 puts chiper("What a string", 5)
-
-(/[^a-zA-Z0-9]/)
