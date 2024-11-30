@@ -14,7 +14,7 @@ class Movie
   @@all = []
 
   def initialize(title, showtime)
-    @title = tite 
+    @title = title 
     @showtime = showtime 
     @@all << self
   end
@@ -24,5 +24,3 @@ class Movie
     movie.cinema = self
   end
 end
-
-
