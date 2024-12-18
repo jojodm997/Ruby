@@ -38,7 +38,7 @@ end
 5 <= 5 #=> true 
 5 <= 7 #=> true 
 
-5.eql?(5.0) #=> false becaue integer and float
+5.eql?(5.0) #=> false becasue integer and float
 5.eql?(5) #=> true 
 
 a = 5 
