@@ -1,1 +1,1 @@
-Koans folder are from https://www.rubykoans.com/
+Koans exercises are from https://www.rubykoans.com/
