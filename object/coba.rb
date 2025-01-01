@@ -155,4 +155,3 @@ end
 
 c = Calculator.new 
 c.square_root(4)
-
