@@ -160,8 +160,8 @@ users[0][0] # 1
 users[0][1] # "Fauzan"
 users.flatten # [1, "Fauzan", 2, "Dwi"]
 
-userd = userd.map { |user| user.capitalize }
-userd = userd.ap(&:capitalize)
+userd = userd.map { |user| user.capitalize } 
+userd = userd.map(&:capitalize) # The shorten version
 
 numbers = [3, 7, 12, 2, 49]
 numbers.slect { |n| n > 10 } #=> 12, 49
