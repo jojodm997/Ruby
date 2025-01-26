@@ -94,3 +94,14 @@ opposites = {positive: "negative", up: "down", right: "left"}
 opposites.each_key { |key| puts key }
 opposites.each_value { |value| puts value }
 opposites.each { |key, value| puts "The opposite of #{key} is #{value}" }
+
+def greet(params)
+  puts "Hello, #{params[:name]}! You are #{[:age]} years old."
+end
+
+person = { name: "Montells", age: "44"}
+greet(person)
+#=> Hello, Montells! You are 44 years old. 
+unordered_person = { age: "44", name: "Montells"}
+greet(unordered_person)
+#=> Hello, Montells! You are 44 years old.
