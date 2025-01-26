@@ -105,3 +105,14 @@ greet(person)
 unordered_person = { age: "44", name: "Montells"}
 greet(unordered_person)
 #=> Hello, Montells! You are 44 years old.
+
+
+def create_user(name:, age: 44, country: 'Unknown')
+  puts "User: #{name}, Age: #{age}, Country: #{country}"
+end
+
+hash_options = {name: "Montells", country: 'Cuba'}
+
+create_user(**hash_options)
+#=> User: Montells, Age: 44, Country: Cuba
+
