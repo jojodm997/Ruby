@@ -117,8 +117,8 @@ end
 
 # short version
 if x == 3 then puts "x is 3" end 
-puts "x is 3" if x == 3
-puts "x is NOT 3" unless x == 3
+  puts "x is 3" if x == 3 end
+  puts "x is NOT 3" unless x == 3 end
 
 true ? "this is true" : "this is not true" #=> "this is true"
 false ? "this is true" : "this is not true " #=> "this is not true"
@@ -142,4 +142,16 @@ elsif (number <= 100)
   puts "#{number} is between 51 and 100"
 else 
   puts "#{number} is above 100"
+end  
+
+def play_turn(warrior)
+  if(warrior.feel.empty?)
+     if(warrior.health < 19)
+       warrior.rest! 
+     else 
+      warrior.walk! 
+     end
+  else
+    warrior.attack!
+  end
 end
