@@ -115,4 +115,3 @@ hash_options = {name: "Montells", country: 'Cuba'}
 
 create_user(**hash_options)
 #=> User: Montells, Age: 44, Country: Cuba
-
