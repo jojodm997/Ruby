@@ -8,7 +8,7 @@ my_hash = {
 my_hash = Hash.new
 my_hash #=> {}
 
-hash = { 9 => "nine", :six => 6, 4.4234 => "forty four point something"}
+hash = { 9 => "nine", :six => 6, 4.4234 => "forty four point something" }
 
 shoes = { 
   "summer" => "sandals",
@@ -62,9 +62,9 @@ end
 person.key?(:name) #=> true
 person.key?(:wealth) #=> false
 
-name_and_age = { "Bob" => 42, "Steve" => 31, "Joe" => 19}
+name_and_age = {"Bob" => 42, "Steve" => 31, "Joe" => 19}
 
-name_and_age.select { |k,v| (k == "Bob") || (v == 19) } #=> {"Bob"=>42, "Joe"=>19}
+name_and_age.select { |key, value| (key == "Bob") || (value == 19) } #=> {"Bob" => 42, "Joe" => 19}
 
 name_and_age.fetch("Steve") #=> 31
 

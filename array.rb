@@ -64,6 +64,7 @@ a.concat(b) #=> [1, 2, 3, 3, 4, 5]
 
 arrys = [1, 2, 3]
 arrys.first #=> 1 
+numbers = [3, 7, 12, 2, 49]
 arrys.last #=> 3
 
 a = [1, 2, 3, 4]
@@ -164,7 +165,7 @@ userd = userd.map { |user| user.capitalize }
 userd = userd.map(&:capitalize) # The shorten version
 
 numbers = [3, 7, 12, 2, 49]
-numbers.slect { |n| n > 10 } #=> 12, 49
+numbers.select { |n| n > 10 } #=> 12, 49
 
 [1, 3, 3, 5, 5].uniq #=> [1, 3, 5]
 
