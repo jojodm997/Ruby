@@ -187,16 +187,16 @@ end
 
 # Jon Snow:
 # { :name=>"Jon",
-#  :email=>"jon_snow@thewall.we",
-#  :favorite_ice_cream_flavors=>["chocolate", "vanilla", "mint chip"],
-#  :knows=>nil
-#}
-
-Freddy Mercury:
-{ :name=>"Freddy",
-:email=>"freddy@mercury.com",
-:favorite_ice_cream_flavors=>["strawberry", "cookie dough", "mint chip"]
-}
+#   :email=>"jon_snow@thewall.we",
+#   :favorite_ice_cream_flavors=>["chocolate", "vanilla", "mint chip"],
+#   :knows=>nil
+# }
+#
+# Freddy Mercury:
+# { :name=>"Freddy",
+#   :email=>"freddy@mercury.com",
+#   :favorite_ice_cream_flavors=>["strawberry", "cookie dough", "mint chip"]
+# }
 
 contact.each do |person, data| 
   data.each do |attribute, value|
@@ -204,7 +204,7 @@ contact.each do |person, data|
   end 
 end
 
-#    name: Jon
+# name: Jon
 # email: jon_snow@thewall.we
 # favorite_ice_cream_flavors: ["chocolate", "vanilla", "mint chip"]
 # knows: nil
@@ -233,12 +233,21 @@ end
 
 
 data = [
-  {"id"=>"1", "properties"=>{"name"=>"Google", "stock_symbol"=>"GOOG", "primary_role"=>"company"}},
-  {"id"=>"2", "properties"=>{"name"=>"Facebook", "stock_symbol"=>"FB", "primary_role"=>"company"}}
+  {"id"=>"1",
+    "properties"=>{"name"=>"Google",
+    "stock_symbol"=>"GOOG",
+    "primary_role"=>"company"}
+  },
+  
+  {"id"=>"2",
+    "properties"=>{"name"=>"Facebook",
+    "stock_symbol"=>"FB",
+    "primary_role"=>"company"}
+  }
 ]
 
 data.each do |result|
-  puts result["id"]
+  puts result["properties"]
 end 
 #=> 1
 #=> 2
