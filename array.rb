@@ -183,11 +183,12 @@ users.concat(new_users) # merge two array
 users = users - users_to_delete # remove elements
 users & new_users # get the elements that appear in two arrays in the same time
 
-family = {  uncles: ["bob", "joe", "steve"],
-            sisters: ["jane", "jill", "beth"],
-            brothers: ["frank","rob","david"],
-            aunts: ["mary","sally","susan"]
-          }
+family = {
+           uncles: ["bob", "joe", "steve"],
+           sisters: ["jane", "jill", "beth"],
+           brothers: ["frank","rob","david"],
+           aunts: ["mary","sally","susan"]
+         }
 
 immediate_family = family.select do |k, v|
   k == :sisters || k == :brothers
@@ -196,3 +197,11 @@ end
 arr = immediate_family.values.flatten
 
 p arr #=> ["jane", "jill", "beth", "frank", "rob", "david"]
+
+# detect is another method which is an alias for .find Both methods return the same result
+[1, 2, 3, 4, 5, 6, 7].find { |x| x.between?(3, 4) } #=> 3
+[1, 2, 3, 4, 5, 6, 7].detect { |x| x.between?(2, 7) } #=> 2
+
+# if you use .select with an array, it will return array. Otherwise if you use hash, the return value will be a hash.
+[1, 2, 3, 4, 5].select { |num| num.even? } #=> [2, 4]
+{a: 1, b: 2, c: 3, d: 4, e: 5, f: 6}.select { |k, v| v.even? } #=> {:b => 2, :d => 4, :f => 6}
