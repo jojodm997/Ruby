@@ -53,6 +53,7 @@ my_number.reduce(1000) { |sum, number| sum + number }
 votes = ["Bob's Dirty Burger Shack", "St. Mark's Bistro", "Bob's Dirty Burger Shack"]
 
 votes.reduce(Hash.new(0)) do |result, vote|
+  puts result
   result[vote] += 1 
   result
 end 
