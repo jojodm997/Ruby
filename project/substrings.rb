@@ -1,8 +1,9 @@
 dictionary = ["below", "down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+word = "Howdy partner, sit down! How's it going?"
 
 def substrings(str, dict)
   dict.reduce(Hash.new(0)) do |result, count|
-    if str.include?(count)
+    if str.downcase.include?(count)
       result[count] += 1
     else
       result
@@ -11,4 +12,4 @@ def substrings(str, dict)
   end  
 end
 
-p substrings("Howdy partner, sit down! How's it going?", dictionary)
+puts substrings(word, dictionary)

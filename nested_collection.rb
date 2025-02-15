@@ -6,11 +6,6 @@ test_scores = [
   [94, 55, 67, 81]
 ]
 
-teacher_mailboxes = [
-  ["Adams", "Baker", "Clark", "Davis"],
-  ["Jones", "Lewis", "Lopez", "Moore"],
-  ["Parez", "Scott", "Smith", "Young"]
-]
 
 teacher_mailboxes[0][0] #=> "Adams"
 teacher_mailboxes[1][0] #=> "Jones"
@@ -52,6 +47,12 @@ test_scores[0].pop
 #=> 100
 test_scores
 #=> [[97, 76, 79, 93], [79, 84, 76, 79], [88, 67, 64, 76], [94, 55, 67, 81]]
+
+teacher_mailboxes = [
+  ["Adams", "Baker", "Clark", "Davis"],
+  ["Jones", "Lewis", "Lopez", "Moore"],
+  ["Parez", "Scott", "Smith", "Young"]
+]
 
 teacher_mailboxes.each_with_index do |row, row_index|
   puts "Row:#{row_index} = #{row}" 
