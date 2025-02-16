@@ -1,15 +1,15 @@
-dictionary = ["below", "down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
-word = "Howdy partner, sit down! How's it going?"
+dictionary = %w[below down go going horn how howdy it i low own part partner sit]
+word = "Howdy partner, sit down! How's it going?".downcase
 
 def substrings(str, dict)
-  dict.reduce(Hash.new(0)) do |result, count|
-    if str.downcase.include?(count)
-      result[count] += 1
-    else
-      result
+  word_count = Hash.new(0)
+
+  str.split.each do |sentence|
+    dict.each do |word|
+      word_count[word] += 1 if sentence.include?(word)
     end
-    result
-  end  
+  end
+  word_count
 end
 
 puts substrings(word, dictionary)

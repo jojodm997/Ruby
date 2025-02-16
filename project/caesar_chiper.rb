@@ -1,20 +1,11 @@
 def chiper(str, num)
-  upcase = ("A".."Z").to_a 
-  lowcase = ("a".."z").to_a 
-  encrypted = ""
+  upcase = ('A'..'Z').to_a
+  lowcase = ('a'..'z').to_a
 
-  str.chars do |char| 
-    if upcase.include?(char)
-      new_index = (upcase.index(char) + num) % 26
-      encrypted << upcase[new_index]
-    elsif lowcase.include?(char)
-      new_index = (lowcase.index(char) + num) % 26
-      encrypted << lowcase[new_index]
-    else 
-      encrypted << char
-    end
-  end
-    return encrypted
+  result = str.chars.map {
+    |alpha| upcase.include?(alpha) ? upcase[upcase.index(alpha) + num % 26] :
+            lowcase.include?(alpha) ? lowcase[lowcase.index(alpha) + num % 26] : alpha }
+   result.join
 end
 
-puts chiper("What a string", 5)
+puts chiper("Jadi gini apakah anda tau bahwa saya adalah seorang Jokodok dari pantai Tai Kucing", 5)
