@@ -5,7 +5,7 @@ def chiper(str, num)
   result = str.chars.map {
     |alpha| upcase.include?(alpha) ? upcase[upcase.index(alpha) + num % 26] :
             lowcase.include?(alpha) ? lowcase[lowcase.index(alpha) + num % 26] : alpha }
-   result.join
+  result.join
 end
 
-puts chiper("Jadi gini apakah anda tau bahwa saya adalah seorang Jokodok dari pantai Tai Kucing", 5)
+chiper('What a string', 5)

@@ -7,7 +7,7 @@
 # Convert an integer to a float:
 13.to_f #=> 13.0
 
-# To convert a float to an integer: 
+# To convert a float to an integer:
 13.0.to_i #=> 13
 13.9.to_i #=> 13
 
@@ -20,23 +20,20 @@
 age = 18 + 4 #=> 22
 
 # Override the value of age
-age = 17 
-#=> 17 
-age = 18 
-#=> 18
+age = 17 #=> 17
+age = 18 #=> 18
 age += 5 #=> 23
 age -= 7 #=> 16
-age *= 2 #=> 36 
+age *= 2 #=> 36
 age /= 4 #=> 8
-
 
 # bad
 a = 19
-string = "john"
+string = 'john'
 
 # good
 age = 18
-name = "john"
+name = 'john'
 can_swin = false
 
 CONSTANT = 'THIS WAS CONSTANT VARIABLE'
@@ -47,11 +44,11 @@ $var = 'global variable' # Don't use this
 name = gets.chomp + ' WELCOME HOME' 
 Bob #=> "Bob WELCOME HOME"
 
-:my_symbol #symbol 
+:my_symbol #symbol
 
-"string" == "string" #=> true
+'string' == 'string' #=> true
 
-"string".object_id == "string".object_id #=> false
+'string'.object_id == 'string'.object_id #=> false
 
 :symbol.object_id == :symbol.object_id #=> true
 
@@ -76,20 +73,20 @@ nil                      # nil literal
 3 ** 4 #=> 81
 
 8 % 2 #=> 0
-10 % 4 #=> 2 
+10 % 4 #=> 2
 
 4 == 4 #=> true
 5 == 4 #=> false
 
-"foo" == "bar" #=> false
-"foo" == "foo" #=> true
+'foo' == 'bar' #=> false
+'foo' == 'foo' #=> true
 
 '4' == 4 #=> false (different types)
 
 '12'.to_i #=> 12
  12.to_s #=> '12'
 
--300.abs #=> 300 
+-300.abs #=> 300
 300.abs #=> 300
 
-"sUp DuDe".swapcase() #=> SuP dUdE
+"sUp DuDe".swapcase #=> SuP dUdE
