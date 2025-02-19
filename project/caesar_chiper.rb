@@ -4,8 +4,8 @@ def chiper(str, num)
 
   result = str.chars.map {
     |alpha| upcase.include?(alpha) ? upcase[(upcase.index(alpha) + num) % 26] :
-            lowcase.include?(alpha) ? lowcase[(lowcase.index(alpha) + num) % 26] : alpha }
-  result.join
+            lowcase.include?(alpha) ? lowcase[(lowcase.index(alpha) + num) % 26] : alpha }.join
+  result
 end
 
 puts chiper('What a string', 5)
