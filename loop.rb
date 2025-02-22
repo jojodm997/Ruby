@@ -1,29 +1,12 @@
-i = 0
-loop do
-  puts "i is #{i}"
-  i += 1
-  break if i == 10
-end
-
 i = 0;
 while i < 10 do
   puts "i is #{i}"
   i += 1
 end
 
-while gets.chomp != 'yes' do
-  puts 'Are we there yet?'
-end
+while gets.chomp != 'yes' do puts 'Are we there yet?' end
 
-i = 0
-until i >= 10 do
-  puts "i is #{i}"
-  i += 1
-end
-
-until gets.chomp == "yes" do
-  puts 'Do you like Pizza?'
-end
+until gets.chomp == 'yes' do puts 'Do you like Pizza?' end
 
 for i in 0..5
   puts "#{i} zombies incoming!"
@@ -97,27 +80,4 @@ i = 0
 until i >= 10 do
   puts "i is #{i}"
   i += 1
-end
-
-for i in 0..5
-  puts"#{i} zombies amkaming"
-end
-
-10.times do |number|
-  puts "Alternative fact number #{number}"
-  number += 1
-end
-
-i = 5
-while i <= 10 do
-  puts "i is #{i}"
-  i += 1
-end
-
-5.times do |number|
-  puts "Hello, world! #{number}"
-end
-
-until gets.chomp == 'yes' do
-  puts 'Are we there yet?'
 end

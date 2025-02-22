@@ -116,13 +116,13 @@ yoink.unshift(1) #=> [1, 2, 3, 4]
 
 # if no block, Enumerator is return
 
-[1, 2, 3].map { |a| puts x**2 }
+[1, 2, 3].map { |x| puts x**2 }
 #=> 1
 #=> 4
 #=> 9
 #=> [nil, nil, nil]
 
-arr = [['test', 'hello', 'world'],['example', 'mem']]
+arr = [['test', 'hello', 'world'], ['example', 'mem']]
 arr[1][0] #=> "example"
 
 arryp = [15, 7, 18, 5, 12, 8, 5, 1]
@@ -189,7 +189,7 @@ family = {
          }
 
 immediate_family = family.select do |k, _v|
-  k == :sisters or k == :brothers
+  k == :sisters || k == :brothers
 end
 
 arr = immediate_family.values.flatten
@@ -202,4 +202,4 @@ p arr #=> ["jane", "jill", "beth", "frank", "rob", "david"]
 
 # if you use .select with an array, it will return array. Otherwise if you use hash, the return value will be a hash.
 [1, 2, 3, 4, 5].select(&:even?) #=> [2, 4]
-{a: 1, b: 2, c: 3, d: 4, e: 5, f: 6}.select { |_k, v| v.even? } #=> {:b => 2, :d => 4, :f => 6}
+{ a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 }.select { |_k, v| v.even? } #=> {:b => 2, :d => 4, :f => 6}
